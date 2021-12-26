@@ -1,0 +1,1 @@
+production_paths = {"Some", "extra", "external directories"}
