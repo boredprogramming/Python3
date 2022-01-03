@@ -5,7 +5,7 @@ you could pass them via the kwargs if you wanted.
 import json
 import re
 import time
-
+import yaml
 """
 REGEX Checks
 """
