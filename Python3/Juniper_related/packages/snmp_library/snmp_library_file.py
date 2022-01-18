@@ -101,8 +101,8 @@ def library(device_type):
                 'interface_alias': '.1.3.6.1.2.1.31.1.1.1.18',
                 'interface_admin_state': '.1.3.6.1.2.1.2.2.1.7',
                 'interface_oper_state': '.1.3.6.1.2.1.2.2.1.8',
-                #'etherStatsCRCAlignErrors': '1.3.6.1.2.1.16.1.1.1.8',
-                #'etherStatsCollisions': '1.3.6.1.2.1.16.1.1.1.13', # The best estimate of the total number of collisions on this Ethernet segment.
+                'etherStatsCRCAlignErrors': '1.3.6.1.2.1.16.1.1.1.8',
+                'etherStatsCollisions': '1.3.6.1.2.1.16.1.1.1.13', # The best estimate of the total number of collisions on this Ethernet segment.
                                                                    # The value returned will depend on the location of the RMON probe. Section 8.2.1.3 (10BASE-5) and section 10.3.1.3
                                                                    # (10BASE-2) of IEEE standard 802.3 states that a station must detect a collision, in the receive mode, if three or
                                                                    # more stations are transmitting simultaneously. A repeater port must detect a collision when two or more stations are
@@ -113,7 +113,7 @@ def library(device_type):
                                                                    # can only detect collisions when it is transmitting. Thus probes placed on a station and a repeater, should report the same number of collisions.
                                                                    # Note also that an RMON probe inside a repeater should ideally report collisions between the repeater and one or more other hosts (transmit collisions
                                                                    # as defined by IEEE 802.3k) plus receiver collisions observed on any coax segments to which the repeater is connected.
-                #'etherStatsDropEvents': '1.3.6.1.2.1.16.1.1.1.3',
+                'etherStatsDropEvents': '1.3.6.1.2.1.16.1.1.1.3',
                 'interface_last_state_change_timeticks': '.1.3.6.1.2.1.2.2.1.9',
                 'jnxL2aldVlanName': '.1.3.6.1.4.1.2636.3.48.1.3.1.1.2',
                 'dot1qVlanStaticName': '1.3.6.1.2.1.17.7.1.4.3.1.1', #Vlan name configured on the device + vlan id in string form
@@ -128,7 +128,7 @@ def library(device_type):
                                                                 # is not learned(3).
                                                                 # Example call / Filter 1.3.6.1.2.1.17.7.1.2.2.1.2.jnxL2aldVlanFdbId => Will return interface ids and mac addresses
                                                                 # The End will need to be converted from decimal to hex to obtain the mac address.
-                'arp_table': '.1.3.6.1.2.1.4.22.1.2',
+                'layer_3_arp_table': '.1.3.6.1.2.1.4.22.1.2',
             }
         }
     elif device_type == "MX":
@@ -147,8 +147,8 @@ def library(device_type):
                 'interface_alias': '.1.3.6.1.2.1.31.1.1.1.18',
                 'interface_admin_state': '.1.3.6.1.2.1.2.2.1.7',
                 'interface_oper_state': '.1.3.6.1.2.1.2.2.1.8',
-                #'etherStatsCRCAlignErrors': '1.3.6.1.2.1.16.1.1.1.8',
-                #'etherStatsCollisions': '1.3.6.1.2.1.16.1.1.1.13', # The best estimate of the total number of collisions on this Ethernet segment.
+                'etherStatsCRCAlignErrors': '1.3.6.1.2.1.16.1.1.1.8',
+                'etherStatsCollisions': '1.3.6.1.2.1.16.1.1.1.13', # The best estimate of the total number of collisions on this Ethernet segment.
                                                                    # The value returned will depend on the location of the RMON probe. Section 8.2.1.3 (10BASE-5) and section 10.3.1.3
                                                                    # (10BASE-2) of IEEE standard 802.3 states that a station must detect a collision, in the receive mode, if three or
                                                                    # more stations are transmitting simultaneously. A repeater port must detect a collision when two or more stations are
@@ -159,7 +159,7 @@ def library(device_type):
                                                                    # can only detect collisions when it is transmitting. Thus probes placed on a station and a repeater, should report the same number of collisions.
                                                                    # Note also that an RMON probe inside a repeater should ideally report collisions between the repeater and one or more other hosts (transmit collisions
                                                                    # as defined by IEEE 802.3k) plus receiver collisions observed on any coax segments to which the repeater is connected.
-                #'etherStatsDropEvents': '1.3.6.1.2.1.16.1.1.1.3',
+                'etherStatsDropEvents': '1.3.6.1.2.1.16.1.1.1.3',
                 'interface_last_state_change_timeticks': '.1.3.6.1.2.1.2.2.1.9',
                 'jnxL2aldVlanFdbId': '1.3.6.1.4.1.2636.3.48.1.3.1.1.5', #Vlan forwarding database reference id. Ex output -> .1.3.6.1.4.1.2636.3.48.1.3.1.1.5.174 = Gauge32: 11403264
                 'dot1qTpFdbPort': '1.3.6.1.2.1.17.7.1.2.2.1.2', # Either the value '0', or the port number of the port on which a frame having a source address equal to the value
@@ -170,7 +170,7 @@ def library(device_type):
                                                                 # is not learned(3).
                                                                 # Example call / Filter 1.3.6.1.2.1.17.7.1.2.2.1.2.jnxL2aldVlanFdbId => Will return interface ids and mac addresses
                                                                 # The End will need to be converted from decimal to hex to obtain the mac address.
-                'arp_table': '.1.3.6.1.2.1.4.22.1.2',           # Depending on your needs you could blank this out if you are not interested in the layer 3 arp table
+                'layer_3_arp_table': '.1.3.6.1.2.1.4.22.1.2',   # Depending on your needs you could blank this out if you are not interested in the layer 3 arp table
             }
         }
     else:
